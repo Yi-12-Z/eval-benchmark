@@ -37,10 +37,12 @@ graph TD
     G --> H[计算通过率 & Token消耗]
     H --> I[Reporter Agent]
     I --> J[生成对比报告]
+```
+
 成果与 Token 消耗
 下图展示了本 Agent 在开发测试阶段使用 GPT-4 API 的日消耗 Token 趋势（2026年4月28日-5月16日），总消耗约 180 万 Token：
 
-https://token_usage.png
+![Daily Token Consumption Chart](token_usage.png)
 
 完整运行日志参见 run_agent.log。初步结果显示：GPT-4 在复杂逻辑理解上通过率较高，Claude 3.5 在代码注释生成上更详细，DeepSeek-V3 在边缘用例处理上存在不足。
 
