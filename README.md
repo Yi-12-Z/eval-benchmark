@@ -12,7 +12,7 @@
 
 下面这张图表，记录了本项目在开发测试阶段使用 GPT-4 API 的 Token 日消耗情况，大致能看出评测强度的变化：
 
-![Daily Token Consumption Chart](images/token_usage.png)
+![Daily Token Consumption Chart](token_usage.png)
 
 *（等会我们会上传这张图片，先把这句话留在这里）*
 
