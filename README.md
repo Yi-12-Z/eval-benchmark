@@ -38,6 +38,8 @@ graph TD
     H --> I[Reporter Agent]
     I --> J[生成对比报告]
 
+
+
 ## 初步结果
 下图展示了本 Agent 在开发测试阶段（使用 GPT-4 API）的日消耗 Token 曲线，可见评估强度逐步上升：
 
