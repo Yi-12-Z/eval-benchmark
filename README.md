@@ -1,4 +1,3 @@
-```markdown
 # LLM 自动化评估 Agent
 
 ## 项目简介
