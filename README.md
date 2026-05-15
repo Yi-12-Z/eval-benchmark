@@ -23,12 +23,27 @@ Agent 执行以下 5 步推理链：
 - **Judge Agent**：对代码输出进行自动化评分（基于 pytest + pylint）。
 - **Reporter Agent**：生成 Markdown 对比表格和趋势图。
 
+### Agent 工作流图
+```mermaid
+graph TD
+    A[测试任务集] --> B[Executor Agent]
+    B --> C[调用 GPT-4 API]
+    B --> D[调用 Claude 3.5 API]
+    B --> E[调用 DeepSeek-V3 API]
+    C --> F[Judge Agent]
+    D --> F
+    E --> F
+    F --> G[运行单元测试]
+    G --> H[计算通过率 & Token消耗]
+    H --> I[Reporter Agent]
+    I --> J[生成对比报告]
+
 ## 初步结果
 下图展示了本 Agent 在开发测试阶段（使用 GPT-4 API）的日消耗 Token 曲线，可见评估强度逐步上升：
 
 ![Token 消耗图](token_usage.png)
 
-完整日志见 `token_usage.csv`。
+完整运行日志参见 run_agent.log。初步结果显示：GPT-4 在复杂逻辑理解上通过率较高，Claude 3.5 在代码注释生成上更详细，DeepSeek-V3 在边缘用例处理上存在不足。
 
 ## 后续计划
 申请到小米 MiMo 百万亿 Token 后，将把 MiMo-V2.5 加入评估池，扩展测试集到 1000+ 用例，并开源完整报告。
